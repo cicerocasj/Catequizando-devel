@@ -40,6 +40,8 @@
     <!-- Custom Fonts -->
     <link href="/static/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    {% block css %}{% endblock %}
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -54,7 +56,8 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        {% include 'base/nav.html' %}
+    
+        {% block nav %}{% endblock %}
 
         <div id="page-wrapper">
             {% block body %}{% endblock %}
@@ -80,6 +83,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="/static/dist/js/sb-admin-2.js"></script>
+    {% block js %}{% endblock %}
 
 </body>
 

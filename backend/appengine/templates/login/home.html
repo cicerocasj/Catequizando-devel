@@ -1,11 +1,18 @@
-{% extends 'base/base.html' %}
+{% extends 'base/base.html' with meu='cicero' %}
+
 {% block css %}
     <link rel="stylesheet" href="/static/bootstrap/css/bootstrap-social.css"/>
     <link rel="stylesheet" href="/static/font-awesome-4.2.0/css/font-awesome.min.css"/>
 {% endblock %}
+
 {% block js %}
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 {% endblock %}
+
+{% block nav %}
+    {% include 'base/nav.html' %}
+{% endblock %}
+
 {% block body %}
 
     <br/>

@@ -1,4 +1,4 @@
-{% extends 'base/base.html' %}
+{% extends 'base/base.html' with a='cicero' %}
 
 {% block title %}Sistema catequético{% endblock %}
 
@@ -6,6 +6,10 @@
 {% endblock %}
 
 {% block js %}
+{% endblock %}
+
+{% block nav %}
+    {% include 'base/nav.html' %}
 {% endblock %}
 
 {% block body %}
