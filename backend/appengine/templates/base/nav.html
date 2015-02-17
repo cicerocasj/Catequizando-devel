@@ -12,73 +12,106 @@
 
     <ul class="nav navbar-top-links navbar-right">
         <!-- /.dropdown -->
-        <li class="dropdown">
-            <a class="dropdown-toggle bell_notice" data-toggle="dropdown" href="#">
-                <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-alerts">
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-star fa-fw"></i> Evento...
-                            <span class="pull-right text-muted small">Há 5 minutos</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-newspaper-o fa-fw"></i> Noticia ...
-                            <span class="pull-right text-muted small">Há 4 horas</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-star fa-fw"></i> Evento...
-                            <span class="pull-right text-muted small">Há 2 dias</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a href="#">
-                        <div>
-                            <i class="fa fa-newspaper-o fa-fw"></i> Noticia ...
-                            <span class="pull-right text-muted small">Há 4 meses</span>
-                        </div>
-                    </a>
-                </li>
-                <li class="divider"></li>
-                <li>
-                    <a class="text-center" href="#">
-                        <strong>Ver todas notificações</strong>
-                        <i class="fa fa-angle-right"></i>
-                    </a>
-                </li>
-            </ul>
-            <!-- /.dropdown-alerts -->
-        </li>
-        <!-- /.dropdown -->
-        <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-            </a>
-            <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i> Meu perfil</a>
-                </li>
-                <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuração</a>
-                </li>
-                <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
-                </li>
-            </ul>
-            <!-- /.dropdown-user -->
-        </li>
-        <!-- /.dropdown -->
+
+        {% if _logged_user %}
+            <div class="dropdown">
+                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
+                        data-toggle="dropdown">
+                    {{ _logged_user.name }}
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/account">{% trans %}Account{% endtrans %}</a></li>
+                    <li role="presentation" class="divider"></li>
+                    <li role="presentation">
+                        <form action="{{ _logout_path }}" method="post" class="text-center">
+                            <button class="btn btn-danger" type="submit">{% trans %}
+                                Logout{% endtrans %}</button>
+                            {{ csrf_input() }}
+                        </form>
+                    </li>
+                </ul>
+            </div>
+            <li class="dropdown">
+                <a class="dropdown-toggle bell_notice" data-toggle="dropdown" href="#">
+                    <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-alerts">
+                    <li>
+                        <a href="#">
+                            <div>
+                                <i class="fa fa-star fa-fw"></i> Evento...
+                                <span class="pull-right text-muted small">Há 5 minutos</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <i class="fa fa-newspaper-o fa-fw"></i> Noticia ...
+                                <span class="pull-right text-muted small">Há 4 horas</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <i class="fa fa-star fa-fw"></i> Evento...
+                                <span class="pull-right text-muted small">Há 2 dias</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <i class="fa fa-newspaper-o fa-fw"></i> Noticia ...
+                                <span class="pull-right text-muted small">Há 4 meses</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a class="text-center" href="#">
+                            <strong>Ver todas notificações</strong>
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-alerts -->
+            </li>
+            <!-- /.dropdown -->
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                </a>
+                <ul class="dropdown-menu dropdown-user">
+                    <li><a href="#"><i class="fa fa-user fa-fw"></i> Meu perfil</a>
+                    </li>
+                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuração</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
+                    </li>
+                </ul>
+                <!-- /.dropdown-user -->
+            </li>
+            <!-- /.dropdown -->
+{#        {% else %}#}
+{#            <div class="nav navbar-nav pull-right pad8">#}
+{#                                    <a class="btn btn-success" href="/login?ret_path=%2F">Login</a>#}
+{##}
+{##}
+{#            </div>#}
+{#            <li class="dropdown">#}
+{#                <a class="dropdown-toggle" data-toggle="dropdown" href="#">#}
+{#                    <button class="btn btn-success">cicero</button>#}
+{#                </a>#}
+{#            </li>#}
+{#            <li><a class="btn btn-success" href="#">jao</a></li>#}
+        {% endif %}
     </ul>
     <!-- /.navbar-top-links -->
 
@@ -101,7 +134,7 @@
                         <a href="index.html"><i class="fa fa-home fa-fw"></i> Início</a>
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-sitemap fa-fw"></i> Turma</a>
+                        <a href="index.html"><i class="fa fa-sitemap fa-fw"></i> Turmas</a>
                     </li>
                     <li>
                         <a href="index.html"><i class="fa fa-user fa-fw"></i> Catequistas</a>
@@ -116,7 +149,7 @@
                         <a href="index.html"><i class="fa fa-group fa-fw"></i> Encontros</a>
                     </li>
                     <li>
-                        <a href="index.html"><i class="fa fa-star fa-fw"></i> Eventos</a>
+                        <a href="index.html"><i class="fa fa-calendar fa-fw"></i> Eventos</a>
                     </li>
                     <li>
                         <a href="index.html"><i class="fa fa-newspaper-o fa-fw"></i> Notícias</a>

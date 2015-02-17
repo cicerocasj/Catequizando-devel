@@ -1,0 +1,31 @@
+{% extends 'catequistass/catequistas_base.html' %}
+{% block body %}
+    {% set catequistas=catequistas or None %}
+    {% set errors=errors or None %}
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <br/>
+
+                <div class="well">
+                    <h1 class="text-center">{% trans %}Catequistas Form{% endtrans %}</h1>
+
+                    <form action="{{ save_path }}" method="post" role="form">
+                        {{ csrf_input() }}
+                        {{ form_input(_('Complemento'),'complemento',catequistas.complemento,errors.complemento) }}
+                        {{ form_input(_('Nome'),'nome',catequistas.nome,errors.nome) }}
+                        {{ form_input(_('Bairro'),'bairro',catequistas.bairro,errors.bairro) }}
+                        {{ form_input(_('Cidade'),'cidade',catequistas.cidade,errors.cidade) }}
+                        {{ form_input(_('Rua'),'rua',catequistas.rua,errors.rua) }}
+                        {{ form_input(_('Numero'),'numero',catequistas.numero,errors.numero) }}
+                        {{ form_input(_('Nascimento'),'nascimento',catequistas.nascimento,errors.nascimento) }}
+                        {{ form_input(_('Cpf'),'cpf',catequistas.cpf,errors.cpf) }}
+                        {{ form_input(_('Responsavel'),'responsavel',catequistas.responsavel,errors.responsavel) }}
+                        <button type="submit" class="btn btn-success">{% trans %}Save{% endtrans %}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

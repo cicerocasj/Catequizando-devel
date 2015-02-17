@@ -54,6 +54,13 @@
 </head>
 
 <body>
+{% macro select_tab(tab='') %}
+
+{% endmacro %}
+
+{% block tabs %}
+    {{ select_tab() }}
+{% endblock %}
 
     <div id="wrapper">
 
