@@ -40,6 +40,8 @@
     <!-- Custom Fonts -->
     <link href="/static/bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
+    <link href="/static/css/default.css" rel="stylesheet">
+
     {% block css %}{% endblock %}
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -56,9 +58,10 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-    
+
         {% block nav %}{% endblock %}
 
+{#        <div {% if not sidebar_small %}id="page-wrapper"{% endif %}>#}
         <div id="page-wrapper">
             {% block body %}{% endblock %}
         </div>

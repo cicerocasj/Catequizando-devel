@@ -14,6 +14,7 @@ from routes.login.passwordless import send_email
 @no_csrf
 def index(ret_path='/'):
     g_path = router.to_path(google.index, ret_path=ret_path)
+    # {'sidebar_small': True}
     dct = {'login_google_path': users.create_login_url(g_path),
            'login_passwordless_path': router.to_path(send_email, ret_path=ret_path),
            'login_facebook_path': router.to_path(facebook.index, ret_path=ret_path),
