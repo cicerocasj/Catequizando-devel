@@ -1,165 +1,149 @@
-<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-    <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand" href="#">Sistema Catequético</a>
-    </div>
-    <!-- /.navbar-header -->
+<div class="navbar navbar-top navbar-inverse">
+    <div class="navbar-inner">
+        <div class="container-fluid">
 
-    <ul class="nav navbar-top-links navbar-right">
-        <!-- /.dropdown -->
+            <a class="brand" href="#">Paróquia São Sebastião</a>
 
-        {% if _logged_user %}
-            <div class="dropdown">
-                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown">
-                    {{ _logged_user.name }}
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-{#                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/account">{% trans %}Account{% endtrans %}</a></li>#}
-                    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">{% trans %}Account{% endtrans %}</a></li>
-                    <li role="presentation" class="divider"></li>
-                    <li role="presentation">
-                        <form action="{{ _logout_path }}" method="post" class="text-center">
-                            <button class="btn btn-danger" type="submit">{% trans %}
-                                Logout{% endtrans %}</button>
-                            {{ csrf_input() }}
-                        </form>
+            <!-- the new toggle buttons -->
+
+            <ul class="nav pull-right">
+
+                <li class="toggle-primary-sidebar hidden-desktop" data-toggle="collapse"
+                    data-target=".nav-collapse-primary">
+                    <button type="button" class="btn btn-navbar"><i class="icon-th-list"></i></button>
+                </li>
+
+                <li class="hidden-desktop" data-toggle="collapse" data-target=".nav-collapse-top">
+                    <button type="button" class="btn btn-navbar"><i class="icon-align-justify"></i></button>
+                </li>
+
+            </ul>
+
+
+            <div class="nav-collapse nav-collapse-top collapse">
+
+                <ul class="nav full pull-right">
+                    <li class="dropdown user-avatar">
+
+                        <!-- the dropdown has a custom user-avatar class, this is the small avatar with the badge -->
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <span>
+                    <img class="menu-avatar" src="/static/images/avatars/avatar1.jpg"/> <span>John Smith <i
+                          class="icon-caret-down"></i></span>
+                    <span class="badge badge-dark-red">5</span>
+                  </span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+
+                            <!-- the first element is the one with the big avatar, add a with-image class to it -->
+
+                            <li class="with-image">
+                                <div class="avatar">
+                                    <img src="/static/images/avatars/avatar1.jpg"/>
+                                </div>
+                                <span>John Smith</span>
+                            </li>
+
+                            <li class="divider"></li>
+
+                            <li><a href="#"><i class="icon-user"></i> <span>Profile</span></a></li>
+                            <li><a href="#"><i class="icon-cog"></i> <span>Settings</span></a></li>
+                            <li><a href="#"><i class="icon-envelope"></i> <span>Messages</span> <span
+                                    class="label label-dark-red pull-right">5</span></a></li>
+                            <li><a href="#"><i class="icon-off"></i> <span>Logout</span></a></li>
+                        </ul>
                     </li>
                 </ul>
+
+                <form class="navbar-search pull-right"/>
+                <input type="text" class="search-query animated" placeholder="Search"/>
+                <i class="icon-search"></i>
+                </form>
+
+                <ul class="nav pull-right">
+                    <li class="active"><a href="#" title="Go home"><i class="icon-home"></i> Home</a></li>
+                    <li><a href="#" title="Manage users"><i class="icon-user"></i> Users</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Some link</a></li>
+                            <li><a href="#">One more separated link</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+
             </div>
-            <li class="dropdown">
-                <a class="dropdown-toggle bell_notice" data-toggle="dropdown" href="#">
-                    <i class="fa fa-bell fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-alerts">
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-star fa-fw"></i> Evento...
-                                <span class="pull-right text-muted small">Há 5 minutos</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-newspaper-o fa-fw"></i> Noticia ...
-                                <span class="pull-right text-muted small">Há 4 horas</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-star fa-fw"></i> Evento...
-                                <span class="pull-right text-muted small">Há 2 dias</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a href="#">
-                            <div>
-                                <i class="fa fa-newspaper-o fa-fw"></i> Noticia ...
-                                <span class="pull-right text-muted small">Há 4 meses</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li class="divider"></li>
-                    <li>
-                        <a class="text-center" href="#">
-                            <strong>Ver todas notificações</strong>
-                            <i class="fa fa-angle-right"></i>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-alerts -->
-            </li>
-            <!-- /.dropdown -->
-            <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
-                </a>
-                <ul class="dropdown-menu dropdown-user">
-                    <li><a href="#"><i class="fa fa-user fa-fw"></i> Meu perfil</a>
-                    </li>
-                    <li><a href="#"><i class="fa fa-gear fa-fw"></i> Configuração</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li><a href="#"><i class="fa fa-sign-out fa-fw"></i> Sair</a>
-                    </li>
-                </ul>
-                <!-- /.dropdown-user -->
-            </li>
-            <!-- /.dropdown -->
-{#        {% else %}#}
-{#            <div class="nav navbar-nav pull-right pad8">#}
-{#                                    <a class="btn btn-success" href="/login?ret_path=%2F">Login</a>#}
-{##}
-{##}
-{#            </div>#}
-{#            <li class="dropdown">#}
-{#                <a class="dropdown-toggle" data-toggle="dropdown" href="#">#}
-{#                    <button class="btn btn-success">cicero</button>#}
-{#                </a>#}
-{#            </li>#}
-{#            <li><a class="btn btn-success" href="#">jao</a></li>#}
-        {% endif %}
-    </ul>
-    <!-- /.navbar-top-links -->
 
-{#    {% if not sidebar_small %}#}
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse">
-                <ul class="nav" id="side-menu">
-                    <li class="sidebar-search">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Busca...">
-                            <span class="input-group-btn">
-                            <button class="btn btn-default" type="button">
-                                <i class="fa fa-search"></i>
-                            </button>
-                        </span>
-                        </div>
-                        <!-- /input-group -->
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-home fa-fw"></i> Início</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-sitemap fa-fw"></i> Turmas</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-user fa-fw"></i> Catequistas</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-graduation-cap fa-fw"></i> Catequizandos</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-edit fa-fw"></i> Chamadas</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-group fa-fw"></i> Encontros</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-calendar fa-fw"></i> Eventos</a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-newspaper-o fa-fw"></i> Notícias</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.sidebar-collapse -->
+
         </div>
-        <!-- /.navbar-static-side -->
-{#    {% endif %}#}
-
-</nav>
+    </div>
+</div>
+<div class="sidebar-background">
+    <div class="primary-sidebar-background"></div>
+</div>
+<div class="primary-sidebar">
+    <ul class="nav nav-collapse collapse nav-collapse-primary">
+        <li class="active">
+            <span class="glow"></span>
+            <a href="#">
+                <i class="icon-home icon-2x"></i>
+                <span>Início</span>
+            </a>
+        </li>
+        <li>
+            <span class="glow"></span>
+            <a href="#">
+                <i class="icon-sitemap icon-2x"></i>
+                <span>Turmas</span>
+            </a>
+        </li>
+        <li>
+            <span class="glow"></span>
+            <a href="#">
+                <i class="icon-user icon-2x"></i>
+                <span>Catequistas</span>
+            </a>
+        </li>
+        <li>
+            <span class="glow"></span>
+            <a href="#">
+                <i class="icon-star-empty icon-2x"></i>
+                <span>Catequizandos</span>
+            </a>
+        </li>
+        <li>
+            <span class="glow"></span>
+            <a href="#">
+                <i class="icon-edit icon-2x"></i>
+                <span>Chamadas</span>
+            </a>
+        </li>
+        <li>
+            <span class="glow"></span>
+            <a href="#">
+                <i class="icon-comments icon-2x"></i>
+                <span>Encontros</span>
+            </a>
+        </li>
+        <li>
+            <span class="glow"></span>
+            <a href="#">
+                <i class="icon-calendar icon-2x"></i>
+                <span>Eventos</span>
+            </a>
+        </li>
+        <li>
+            <span class="glow"></span>
+            <a href="#">
+                <i class=" icon-info-sign icon-2x"></i>
+                <span>Notícias</span>
+            </a>
+        </li>
+    </ul>
+</div>
