@@ -48,58 +48,58 @@
 </div>
 <div class="primary-sidebar">
     <ul class="nav nav-collapse collapse nav-collapse-primary">
-        <li class="active">
+        <li {% if nav_active == 'inicio' %}class="active"{% endif %}>
             <span class="glow"></span>
             <a href="/">
                 <i class="icon-home icon-2x"></i>
                 <span>Início</span>
             </a>
         </li>
-        <li>
+        <li {% if nav_active == 'turmas' %}class="active"{% endif %}>
             <span class="glow"></span>
             <a href="/turmas">
                 <i class="icon-sitemap icon-2x"></i>
                 <span>Turmas</span>
             </a>
         </li>
-        <li>
+        <li {% if nav_active == 'catequistas' %}class="active"{% endif %}>
             <span class="glow"></span>
-            <a href="#">
+            <a href="/catequistas">
                 <i class="icon-user icon-2x"></i>
                 <span>Catequistas</span>
             </a>
         </li>
-        <li>
+        <li {% if nav_active == 'catequizandos' %}class="active"{% endif %}>
             <span class="glow"></span>
-            <a href="#">
+            <a href="/catequizandos">
                 <i class="icon-star-empty icon-2x"></i>
                 <span>Catequizandos</span>
             </a>
         </li>
-        <li>
+        <li {% if nav_active == 'chamadas' %}class="active"{% endif %}>
             <span class="glow"></span>
-            <a href="#">
+            <a href="/chamadas">
                 <i class="icon-edit icon-2x"></i>
                 <span>Chamadas</span>
             </a>
         </li>
-        <li>
+        <li {% if nav_active == 'encontros' %}class="active"{% endif %}>
             <span class="glow"></span>
-            <a href="#">
+            <a href="/encontros">
                 <i class="icon-comments icon-2x"></i>
                 <span>Encontros</span>
             </a>
         </li>
-        <li>
+        <li {% if nav_active == 'eventos' %}class="active"{% endif %}>
             <span class="glow"></span>
-            <a href="#">
+            <a href="/eventos">
                 <i class="icon-calendar icon-2x"></i>
                 <span>Eventos</span>
             </a>
         </li>
-        <li>
+        <li {% if nav_active == 'noticias' %}class="active"{% endif %}>
             <span class="glow"></span>
-            <a href="#">
+            <a href="/noticias">
                 <i class=" icon-info-sign icon-2x"></i>
                 <span>Notícias</span>
             </a>

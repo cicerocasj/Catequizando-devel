@@ -8,5 +8,6 @@ from gaepermission.decorator import login_not_required
 @login_not_required
 @no_csrf
 def index():
-    lista = {'pessoa': [1, 13], 'eu': {'voce': 'natalia', 'sim': 'sim mesmo'}}
-    return TemplateResponse(lista, template_path='/turmas.html')
+    context = {}
+    context["nav_active"] = 'turmas'
+    return TemplateResponse(context, template_path='/turmas.html')
