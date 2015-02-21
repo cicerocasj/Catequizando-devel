@@ -2,7 +2,7 @@
     <div class="navbar-inner">
         <div class="container-fluid">
 
-            <a class="brand" href="#">Paróquia São Sebastião</a>
+            <a class="brand" href="/">Paróquia São Sebastião</a>
 
             <div class="nav-collapse nav-collapse-top collapse">
 
@@ -43,7 +43,8 @@
         </div>
     </div>
 </div>
-<div class="sidebar-background">
+{% if not hide_navbar %}
+    <div class="sidebar-background">
     <div class="primary-sidebar-background"></div>
 </div>
 <div class="primary-sidebar">
@@ -106,3 +107,4 @@
         </li>
     </ul>
 </div>
+{% endif %}

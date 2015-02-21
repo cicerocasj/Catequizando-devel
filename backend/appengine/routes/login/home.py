@@ -18,5 +18,6 @@ def index(ret_path='/'):
     dct = {'login_google_path': users.create_login_url(g_path),
            'login_passwordless_path': router.to_path(send_email, ret_path=ret_path),
            'login_facebook_path': router.to_path(facebook.index, ret_path=ret_path),
-           'faceapp': facade.get_facebook_app_data().execute().result}
+           'faceapp': facade.get_facebook_app_data().execute().result,
+           'hide_navbar': True}
     return TemplateResponse(dct)
