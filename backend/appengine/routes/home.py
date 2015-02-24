@@ -74,5 +74,6 @@ def index():
                    u'veniam excepturi. Maiores praesentium, porro voluptas suscipit facere rem dicta, debitis.'
     }]
     context["messages"] = messages
+    context["nav_active"] = 'inicio'
     return TemplateResponse(context)
 

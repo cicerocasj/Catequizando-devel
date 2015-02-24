@@ -9,5 +9,5 @@ from gaepermission.decorator import login_not_required
 @no_csrf
 def index():
     context = {}
-    context["nav_active"] = 'catequistas'
-    return TemplateResponse(context, template_path='/catequistas.html')
+    context["nav_active"] = 'encontros'
+    return TemplateResponse(context, template_path='/encontros.html')

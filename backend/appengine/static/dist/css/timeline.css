@@ -2,6 +2,7 @@
     position: relative;
     padding: 20px 0 20px;
     list-style: none;
+    margin: 0;
 }
 
 .timeline:before {
@@ -12,7 +13,7 @@
     left: 50%;
     width: 3px;
     margin-left: -1.5px;
-    background-color: #eeeeee;
+    background: #EEEEEE;
 }
 
 .timeline > li {
@@ -43,12 +44,13 @@
 .timeline > li > .timeline-panel {
     float: left;
     position: relative;
-    width: 46%;
+    width: 40%;
     padding: 20px;
     border: 1px solid #d4d4d4;
     border-radius: 2px;
     -webkit-box-shadow: 0 1px 6px rgba(0,0,0,0.175);
     box-shadow: 0 1px 6px rgba(0,0,0,0.175);
+    background: #fbfbfb;
 }
 
 .timeline > li > .timeline-panel:before {
